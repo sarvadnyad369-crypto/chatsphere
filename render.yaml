@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: chatshpere
+    env: node
+    plan: free
+    region: oregon  # or singapore, frankfurt, etc.
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
